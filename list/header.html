@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="js/app.js"></script>
+</head>
+<body ng-controller="listCtrl" ng-cloak ng-jq>
+  <h1 class="am-topbar-brand">
+    <!-- <a ng-href="{{header.logohref}}" style="background-image: url('{{header.logourl}}');" class="am-text-ir">{{header.title}}</a> -->
+    <a ng-href="{{header.logohref}}{{'?id=1'}}" id="userphoto"><img class="am-circle " ng-src="{{header.logourl}}" width="32" height="32"></a>
+  </h1>
+  <div class="am-vertical-align am-text-center listTitle">{{header.title}}</div>
+  <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only am-header-right" data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars am-text-lg"></span></button>
+
+  <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
+    <ul class="am-nav am-nav-pills am-topbar-nav">
+      <li ng-repeat="menus in header.menus"><a ng-href="{{menus.href}}">{{menus.title}}</a></li>
+    </ul>
+  </div>
+</body>
+</html>

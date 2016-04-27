@@ -1,0 +1,199 @@
+<!doctype html>
+<html class="no-js" ng-app="listApp" ng-controller="listCtrl" ng-cloak>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <title>列表</title>
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileColor" content="#0e90d2">
+
+  <link rel="stylesheet" href="css/amazeui.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="shortcut icon" ng-href="{{header.ico}}" type="image/x-icon">
+  <script src="js/angular.1.4.6.min.js"></script> 
+  <script src="js/pingpp.js"></script>
+</head>
+<body>
+<!--在这里编写你的代码-->
+<div class="listMain">
+<header class="am-topbar am-header-default" data-am-widget="header" style="position: relative;" ng-include="'header.html'"></header>
+    <!-- 页头结束 -->
+
+    <div class="agencyBody">    
+        <div class="am-g am-g-fixed am-margin-top">
+            <div class="am-u-sm-0 am-u-md-0 am-u-lg-9"></div>
+            <div class="am-u-sm-12 am-u-md-12 am-u-lg-3">
+               <div class="am-g">
+                  <div class="am-u-lg-12">
+                    <div class="am-input-group">
+                      <input type="text" class="am-form-field" placeholder="请输入搜索内容" id="searchText">
+                      <span class="am-input-group-btn">
+                        <button class="am-btn am-btn-default list-search-btn" type="button" id="searchBtn"><span class="am-icon-search"></span> </button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>  
+        <div class="am-g am-g-fixed am-margin-top">
+              <div data-am-widget="list_news" class="am-list-news am-list-news-default">
+                    <div class="am-list-news-bd">
+                        <ul class="am-list" >
+                           <!--缩略图在标题左边-->
+                            <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left am-cf" ng-repeat = "list in classifys.list">
+                                <div class="am-u-sm-4 am-list-thumb">
+                                  <a onclick="pay()">
+                                    <img ng-src="{{list.imgurl}}" class="am-img-responsive" alt="{{list.title}}"/>
+                                  </a>
+                                </div>
+                                <div class=" am-u-sm-8 am-list-main list-main">
+                                    <h3 class="am-list-item-hd"><a onclick="pay()">{{list.title}}</a></h3>
+                                    <div class="am-list-item-text">{{list.desc}}</div>
+                                </div><!-- <br/><br/><br/> -->
+                                <div style="clear: both;"></div>
+                                 <div class="list-bottom">
+                                      <div class="am-fl list-sour"><span ng-repeat = "tags in list.tags|limitTo:3">{{tags}}</span></div>
+                                      <div class="am-fr">
+                                        <span class="am-icon-comment-o">{{list.msgscnt}}</span> <!-- 回复 -->
+                                        <span class="am-icon-star-o">{{list.favritescnt}}</span> <!-- 收藏 -->
+                                        <span class="am-icon-thumbs-o-up">{{list.clickscnt}}</span> <!-- 点赞 -->
+                                      </div>
+                                 </div>
+                            </li>
+                        </ul>
+                        <div><!-- 模态框 -->
+
+                              <!-- 付款确认 -->
+                              <div class="am-modal am-modal-confirm listmodal" tabindex="-1" id="my-confirm"> 
+                                <div class="am-modal-dialog">
+                                  <div class="am-modal-hd">付款确认</div>
+                                  <div class="am-modal-bd">
+                                      <div class="am-text-left modalprice"><span id="payprice" class="am-text-lg">20.1</span>元</div>
+                                      <div id="checkpay">
+                                          <label>
+                                            <span class="am-fl am-text-left"><img src="images/wx.jpg" width="20" class="payimg">微信支付</span>
+                                            <span class="pay_list_c1 on am-fr">
+                                                <input type="radio" checked="checked" name="payway" value="1" class="radioclass" id="payway-wx">
+                                            </span>
+                                          </label>
+                                          <label>
+                                            <span class="am-fl am-text-left"><img src="images/zfb.jpg" width="20" class="payimg">支付宝支付</span>
+                                            <span class="pay_list_c1 am-fr">
+                                                <input type="radio"  name="payway" value="1" class="radioclass" id="payway-zfb">
+                                            </span>
+                                          </label>
+                                      </div>
+                                      <a href="javascript:;" id="hasAcc" class="am-text-left">我已拥有帐号</a>
+                                  </div>
+                                  <div class="am-modal-footer payfooter">
+                                    <span class="am-modal-btn okbtn" id="paybtn" data-am-modal-confirm>确认微信支付</span>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- 登录框 -->
+                              <div class="am-modal am-modal-confirm listmodal" tabindex="-1" id="my-login">
+                                <div class="am-modal-dialog">
+                                  <div class="am-modal-hd">登录</div>
+                                  <div class="am-modal-bd">
+                                          请输入您的手机号或客户号
+                                      <input type="text" class="am-modal-prompt-input" id="logintext">
+                                  </div>
+                                  <div class="am-modal-footer payfooter">
+                                    <span class="am-modal-btn okbtn" data-am-modal-confirm>登录</span>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- 错误提示 -->
+                              <div class="am-modal am-modal-confirm listmodal" tabindex="-1" id="errormsg">
+                                  <div class="am-modal-dialog">
+                                    <div class="am-modal-hd">error</div>
+                                    <div class="am-modal-bd"></div>
+                                    <div class="am-modal-footer payfooter">
+                                      <span class="am-modal-btn okbtn">确定</span>
+                                    </div>
+                                  </div>
+                              </div>
+
+                              <!-- 支付成功 -->
+                              <div class="am-modal am-modal-confirm listmodal" tabindex="-1" id="paySuccess">
+                                  <div class="am-modal-dialog">
+                                    <div class="am-modal-hd">
+                                      <img src="images/payok.png" width="20">支付成功
+                                      <div>您的客户号是:<span id="userName" class="am-text-lg"></span></div>
+                                      </div>
+                                    <div class="am-modal-bd">
+                                      您可以输入手机号以方便下次登录使用
+                                      <input type="phone" class="am-modal-prompt-input" id="userMobile">
+                                    </div>
+                                    <div class="am-modal-footer payfooter">
+                                      <span class="am-modal-btn payclose" data-am-modal-cancel>关闭</span>
+                                      <span class="am-modal-btn paysubmit" data-am-modal-confirm>提交</span>
+                                    </div>
+                                  </div>
+                              </div>
+
+                              <!-- loading -->
+                              <div class="am-modal am-modal-loading am-modal-no-btn" tabindex="-1" id="loading">
+                                <div class="am-modal-dialog">
+                                  <div class="am-modal-hd">正在加载...</div>
+                                  <div class="am-modal-bd">
+                                    <span class="am-icon-spinner am-icon-spin"></span>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                        
+                    </div>
+              </div>
+              <div data-am-widget="gotop" class="am-gotop am-gotop-fixed" >
+                <a href="#top" title="回到顶部">
+                    <span class="am-gotop-title">回到顶部</span>
+                      <i class="am-gotop-icon am-icon-arrow-up am-active"></i>
+                </a>
+              </div>
+        </div>  
+    </div>
+
+<footer ng-include = "'footer.html'"></footer>
+
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/amazeui.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script>
+ var listapp = angular.module('listApp', []);
+    listapp.controller('listCtrl', function($scope,$http) {
+        $http.get("json/app.json")
+        .success(function(response){
+            $scope.header = response.header;
+            $scope.list = response;
+            var classArray = response.classifys; //获取类别数组
+            var index = fClass(classArray);
+            $scope.classifys = response.classifys[index];
+          })
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+{
+    "result": 0,
+    "error": "",
+    "paid": false,
+    "chare": {
+        "id": "ch_KS8mHGSevLCC5uXDa1aDqTOS",
+        "object": "charge",
+        "created": 1461115876,
+        "livemode": false,
+        "paid": false,
+        "refunded": false,
+        "app": "app_eDCW94bzLuvLv5Gq",
+        "channel": "wx_pub",
+        "order_no": "3",
+        "client_ip": "0.0.0.0",
+        "amount": 100,
+        "amount_settle": 100,
+        "currency": "cny",
+        "subject": "电影",
+        "body": "独立日",
+        "extra": {
+            "open_id": "openidxxxxxxxxxxxx"
+        },
+        "time_paid": null,
+        "time_expire": 1461123076,
+        "time_settle": null,
+        "transaction_no": null,
+        "refunds": {
+            "object": "list",
+            "url": "/v1/charges/ch_KS8mHGSevLCC5uXDa1aDqTOS/refunds",
+            "has_more": false,
+            "data": []
+        },
+        "amount_refunded": 0,
+        "failure_code": null,
+        "failure_msg": null,
+        "metadata": {},
+        "credential": {
+            "object": "credential",
+            "wx_pub": {
+                "appId": "wxup8yt0vzlcutdqpm",
+                "timeStamp": 1461115876,
+                "nonceStr": "f1bc2a11f068395f2d3b3a81a8c12bbc",
+                "package": "prepay_id=1101000000160420jfpih0urf9c4swfr",
+                "signType": "MD5",
+                "paySign": "3655BB70725E9A1ABEAAD1612D0B9603"
+            }
+        },
+        "description": null
+    }
+}
+
+
+
+{
+    "result":0,
+    "error":"",
+    "paid":false,
+    "chare":
+        {
+            "id":"ch_10C4GCDOy1WH40q148zHuf1G",
+            "object":"charge",
+            "created":1461144560,
+            "livemode":false,
+            "paid":false,
+            "refunded":false,
+            "app":"app_eDCW94bzLuvLv5Gq",
+            "channel":"wx_pub",
+            "order_no":"96",
+            "client_ip":"127.0.0.1",
+            "amount":100,
+            "amount_settle":100,
+            "currency":"cny",
+            "subject":"电影",
+            "body":"独立日",
+            "extra":{"open_id":"openidxxxxxxxxxxxx"},
+            "time_paid":null,
+            "time_expire":1461151760,
+            "time_settle":null,
+            "transaction_no":null,
+            "refunds":
+                {
+                    "object":"list",
+                    "url":"\/v1\/charges\/ch_10C4GCDOy1WH40q148zHuf1G\/refunds",
+                    "has_more":false,"data":[]},
+                    "amount_refunded":0,
+                    "failure_code":null,
+                    "failure_msg":null,
+                    "metadata":[],
+                    "credential":
+                        {
+                            "object":"credential",
+                            "wx_pub":{"appId":"wxoad4cggc0gk4ynr9",
+                            "timeStamp":1461144560,
+                            "nonceStr":"031dbff1dd3125e24b02c5479ed035ad",
+                            "package":"prepay_id=1101000000160420frnr1knbbfjdyxr5",
+                            "signType":"MD5",
+                            "paySign":"63A6F8C2BF9D99A3B97ED11115F6BD2D"
+                        }
+                },
+            "description":null
+        }
+}

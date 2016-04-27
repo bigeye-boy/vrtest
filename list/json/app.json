@@ -1,0 +1,159 @@
+{
+	"header": {
+		"title": "360 VR",
+		"logourl": "http://s.amazeui.org/media/i/demos/bw-2014-06-19.jpg?imageView/1/w/1000/h/1000/q/80",
+		"logohref": "member.html",
+		"ico":"http://localhost/test/list/images/logo.ico",
+		"menus": [{
+			"title": "首页",
+			"href": "index.html"
+		}]
+	},
+
+	"search": {
+		"search_href": "http://domain.com/fulltextserach.html",
+		"hot_keywords": ["music", "videos", "南海问题"]
+	},
+	"classifys": [{
+		"uid": 1,
+		"sortid": 1,
+		"title": "360导览",
+		"more_href": "listdetail_video.html",
+		"list": [{
+			"title": "建筑",
+			"imgurl": "images/guide01.png",
+			"href": "../viewer/player.html?xml=../video/demotour-stereoscopic/tour.xml",
+			"desc": "360度建筑",
+			"clickscnt": 7,
+			"favritescnt": 6,
+			"msgscnt": 8,
+			"payment": {
+				"pay": 0.1
+			},
+			"tags": ["football", "china", "china3"]
+		}, {
+			"title": "博物馆",
+			"imgurl": "images/guide02.png",
+			"href": "../viewer/player.html?xml=../video/demotour-kuchlerhaus/tour.xml",
+			"desc": "360度逛博物馆",
+			"clickscnt": 7,
+			"favritescnt": 6,
+			"msgscnt": 8,
+			"payment": {
+				"pay": 0.1
+			},
+			"tags": ["football", "china"]
+		}]
+	}, {
+		"uid": 2,
+		"sortid": 2,
+		"title": "运动视频",
+		"more_href": "listdetail_video.html",
+		"list": [{
+			"title": "全景死亡体验--垂直下落过山车",
+			"imgurl": "images/sport01.jpg",
+			"href": "../viewer/player.html?xml=../video/videopano7/videopano.xml",
+			"desc": "全景死亡体验！世界上最丧心病狂的垂直过山车！荷兰主题乐园Efteling最刺激的主题过山车“男爵1898”，将带游客来到19世纪的荷兰采矿业。游客将化身为当时的矿工，从37.5米的高度沿着井筒自由下落，最高时速超过90公里。“没什么比面朝天空，俯冲10层楼的高度更刺激的了。对接下来发生什么事，你真的就什么也不知道了。”乘坐它会带你盘旋直冲云霄，也会带你俯冲钻入地洞；乘坐它会让你惊叫连连，会让你感受穿越般的紧张刺激！ ",
+			"clickscnt": 7,
+			"favritescnt": 6,
+			"msgscnt": 8,
+			"payment": {
+				"pay": 0.1
+			},
+			"tags": ["football", "china"]
+		}, {
+			"title": "VR视频F-5战斗机驾驶舱体验飞行",
+			"imgurl": "images/sport02.png",
+			"href": "../viewer/player.html?xml=../video/videopano/videopano.xml",
+			"desc": "驾驶战斗机在天空翱翔？现在机会来了！这个VR视频将带着你在F-5战斗机驾驶舱体验飞行。驾驶舱的各种仪表盘、随着驾驶员视角伴随左右的红白战机、窗外擦肩而过的阿尔卑斯山脉，这一次是绝无仅有的非凡的体验",
+			"clickscnt": 7,
+			"favritescnt": 6,
+			"msgscnt": 8,
+			"payment": {
+				"pay": 0.1
+			},
+			"tags": ["football", "china"]
+		}, {
+			"title": "阿尔卑斯滑雪",
+			"imgurl": "images/sport03.png",
+			"href": "../viewer/player.html?xml=../video/videopano6/videopano.xml",
+			"desc": "360度全景VR视频带你领略krvavec滑雪胜地（斯洛文尼亚阿尔卑斯山滑雪）",
+			"clickscnt": 7,
+			"favritescnt": 6,
+			"msgscnt": 8,
+			"payment": {
+				"pay": 0.1
+			},
+			"tags": ["football", "china"]
+		}, {
+			"title": "翼装飞翔360度全景视角",
+			"imgurl": "images/sport04.png",
+			"href": "../viewer/player.html?xml=../video/videopano3/videopano.xml",
+			"desc": "【4K VR全景视频】勇者游戏翼装飞翔360度全景视角",
+			"clickscnt": 7,
+			"favritescnt": 6,
+			"msgscnt": 8,
+			"payment": {
+				"pay": 0.1
+			},
+			"tags": ["football", "china"]
+		}, {
+			"title": "战斗机空战",
+			"imgurl": "images/sport05.jpg",
+			"href": "../viewer/player.html?xml=../video/videopano5/videopano.xml",
+			"desc": "【4K VR全景视频】战斗机空战",
+			"clickscnt": 7,
+			"favritescnt": 6,
+			"msgscnt": 8,
+			"payment": {
+				"pay": 0.1
+			},
+			"tags": ["football", "china"]
+		}]
+	}, {
+		"uid": 3,
+		"sortid": 3,
+		"title": "旅游视频",
+		"more_href": "listdetail_video.html",
+		"list": [{
+			"title": "沙漠",
+			"imgurl": "images/tour01.png",
+			"href": "../viewer/player.html?xml=../video/videopano1/videopano.xml",
+			"desc": "360度全景VR视频带你领略沙漠",
+			"clickscnt": 7,
+			"favritescnt": 6,
+			"msgscnt": 8,
+			"payment": {
+				"pay": 0.1
+			},
+			"tags": ["football", "china"]
+		}, {
+			"title": "神秘而梦幻的中国云南之旅",
+			"imgurl": "images/tour02.png",
+			"href": "../viewer/player.html?xml=../video/videopano4/videopano.xml",
+			"desc": "云梦萦绕，满江春意神秘而梦幻的中国云南，一场视觉盛宴等你开启！这场”空中旅行“定让你乐不思蜀！",
+			"clickscnt": 7,
+			"favritescnt": 6,
+			"msgscnt": 8,
+			"payment": {
+				"pay": 0.1
+			},
+			"tags": ["football", "china"]
+		}, {
+			"title": "SNH48不想太伟大 bixude",
+			"imgurl": "images/tour03.png",
+			"href": "../viewer/player.html?xml=../video/videopano2/videopano.xml",
+			"desc": "SNH48女神们陪你过圣诞啦！“不要学习一整天 那会变傻瓜”“不想天天都上班 偶尔也要放假”“生命不要变复杂 做自己好啦”这首歌的歌词简直唱出所有人的心情，少女们唱出来后更是格外暖心。",
+			"clickscnt": 7,
+			"favritescnt": 6,
+			"msgscnt": 8,
+			"payment": {
+				"pay": 0.1
+			},
+			"tags": ["football", "china"]
+		}]
+	}]
+
+
+
+}
