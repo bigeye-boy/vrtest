@@ -58,10 +58,6 @@
         $http.get("json/app.json")
         .success(function(response){
             $scope.header = response.header;
-            $scope.list = response;
-            var classArray = response.classifys; //获取类别数组
-            var index = fClass(classArray);
-            $scope.classifys = response.classifys[index];
           })
 });
 </script>

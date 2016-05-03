@@ -3,12 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
+  <script src="js/app.js"></script>
 </head>
-<body ng-controller="listCtrl" ng-cloak>
+<body ng-controller="listCtrl" ng-cloak ng-jq>
     <footer data-am-widget="footer"class="am-footer am-footer-default" data-am-footer="{  }">
     <div class="am-footer-miscs ">
-        <div class="am-g am-g-fixed am-text-center am-hide-lg-only"><a class="am-u-sm-12" href="http://10.34.56.78/hello/world/login.html?token=NeoBeyondVision"><img class="am-img-responsive" src="images/mfsw.png"></a></div>
-        <p>由 <a href="http://www.yoursclass.com" title="欣广视科技"target="_blank" class="">欣广视科技</a> 提供技术支持</p>
+      <a ng-href="{{freeurl}}" id="freeurl" class="am-hide-lg-only">
+        <div class="am-header am-header-default bgblue">
+        <h1 class="am-header-title" style="margin: 0 25%;">
+           <img class="am-img-responsive" style="display: inline;" src="images/wifi.png">
+           <span style="display: inline;">点击一键上网</span>
+        </h1>
+        </div>
+      </a>
+      <p>由 <a href="http://www.yoursclass.com" title="欣广视科技"target="_blank" class="">欣广视科技</a> 提供技术支持</p>
     </div>
   </footer>
 

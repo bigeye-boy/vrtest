@@ -23,8 +23,8 @@
     return null;
   }
 
-  function fClass(classArr) {
-    var uidvalue = GetQueryString("uid"); //执行GetQueryString方法并将值赋值给变量
+  function fClass(classArr,augument) {
+    var uidvalue = GetQueryString(augument); //执行GetQueryString方法并将值赋值给变量
     var filterarray = jQuery.grep(classArr, function(value, i) {
       if (value.uid == uidvalue) { //筛选出url参数值
         return i = i + 1;
@@ -52,12 +52,14 @@
       for (var j = 0; j < searArr[i].list.length; j++) {
         var desc = searArr[i].list[j].desc;
         var title = searArr[i].list[j].title;
-        if (desc.indexOf(searchWd) > -1 || title.indexOf(searchWd) > -1) {
+        var type = searArr[i].type;
+        if (type == 'app') {continue;}
+        else if (desc.indexOf(searchWd) > -1 || title.indexOf(searchWd) > -1) {
           arrayObj.push(searArr[i].list[j]);
         }
       }
     }
-    if (arrayObj !== null) {
+    if (arrayObj.length != 0) {
       return arrayObj;
     } else {
       $(".searchErr").text('未搜到结果，请重新输入！')
@@ -70,53 +72,84 @@
   })
 
 
-  // $(".am-list").bind('click', function() {
-  //   var payok = store.get('paid');
-  //   var username = store.get('userId');
-  //   $.ajax({
-  //     url: 'http://139.159.0.30:8020/devicemanage/index.php/RestPingPP',
-  //     type: 'POST',
-  //     dataType: 'json',
-  //     data: JSON.stringify(PostUserData(username)),
-  //     success: function(data) {
-  //       if (data.paid) {
-  //         window.location.href = 'video.html';
-  //       } else {
-  //         $('#my-confirm').modal({
-  //           onConfirm: function() {
-  //             listclick(username);
-  //           }
-  //         });
-  //       }
-  //     },
-  //     beforeSend: function() {
-  //       $('#loading').modal({
-  //         closeViaDimmer: false
-  //       })
-  //     },
-  //     complete: function() {
-  //       $('#loading').modal('close');
-  //     }
-  //   });
-  // })
-
-function pay(){
+function pay(th){
+    var thisId = $(th).attr('data-id');
+    var ResID;
+    var Restype;
+    var subject;
+    var body;
+    var amount;
+    $.getJSON('http://localhost/test/list/json/app.json', function(json) {
+        var classifys = json.classifys;
+        for(var i = 0;i<classifys.length;i++){
+          for(var j = 0;j<classifys[i].list.length;j++){
+              var ResID = classifys[i].list[j].ResID;
+              if(ResID==thisId){
+                 Restype = classifys[i].title;
+                 subject = classifys[i].list[j].title;
+                 body = classifys[i].list[j].desc;
+                 amount = classifys[i].list[j].payment.pay;
+                 var ResID = classifys[i].list[j].ResID;
+                 return Restype;
+                 console.log(Restype);
+                break;
+              }
+          }
+        }
+    })
     var payok = store.get('paid');
     var username = store.get('userId');
+    console.log(Restype);
     $.ajax({
       url: 'http://139.159.0.30:8020/devicemanage/index.php/RestPingPP',
       type: 'POST',
       dataType: 'json',
-      data: JSON.stringify(PostUserData(username)),
+      data: JSON.stringify(PostUserData(username,ResID,Restype,subject,body)),
       success: function(data) {
         if (data.paid) {
           window.location.href = 'video.html';
         } else {
-          $('#my-confirm').modal({
-            onConfirm: function() {
-              listclick(username);
-            }
-          });
+
+          $('#my-confirm').modal({onConfirm: function() {listclick(username,ResID,amount,Restype,subject,body);}}); 
+
+          // 已有账户点击登录 
+          $("#hasAcc").click(function(){
+            $('#my-confirm').modal('close');
+              $('#my-login').modal({
+                onConfirm: function() {
+                  var username = $('#logintext').val();
+                  $.ajax({
+                    url: 'http://139.159.0.30:8020/devicemanage/index.php/RestPingPP',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: JSON.stringify(PostUserData(username,ResID,Restype,subject,body)),
+                    success: function(data) {
+                      if (data.paid == true) {
+                        window.location.href = window.location.href;
+                        store.set('userId', data.UserName);
+                        store.set('paid', data.paid);
+                      } else {
+                        store.set('paid', data.paid);
+                        $('#my-login').modal('close');
+                        // $('#errormsg').modal({closeViaDimmer:false}).find(".am-modal-bd").text(data.error);
+                        $('#errormsg').modal({
+                          closeViaDimmer: false
+                        }).find(".am-modal-bd").text('未查到购买记录');
+                      }
+                    },
+                    beforeSend: function() {
+                      $('#loading').modal({
+                        closeViaDimmer: false
+                      })
+                    },
+                    complete: function() {
+                      $('#loading').modal('close');
+                    }
+                  })
+                }
+              })
+          })
+          // ---------------------------
         }
       },
       beforeSend: function() {
@@ -131,15 +164,15 @@ function pay(){
 }
 
 
-  function PostUserData(user) {
+  function PostUserData(username,ResID,Restype,subject,body) {
     var json = {
       "action": "Charge",
       "AppName": "APCloud",
-      "UserName": user,
-      "Res_type": "FILM",
-      "ResID": 3,
-      "Subject": "电影",
-      "Body": "独立日",
+      "UserName": username,
+      "Res_type": Restype,
+      "ResID": ResID,
+      "Subject": subject,
+      "Body": body,
       "Channel": "",
       "debug": 1
     };
@@ -147,7 +180,7 @@ function pay(){
   }
 
 
-  function listclick(username) {
+  function listclick(username,ResID,amount,Restype,subject,body) {
     store.set('userUrl', window.location.href);
     var channel;
     var payway = $('#checkpay').find(':checked').attr('id');
@@ -160,7 +193,7 @@ function pay(){
       url: 'http://139.159.0.30:8020/devicemanage/index.php/RestPingPP',
       type: 'POST',
       dataType: 'json',
-      data: JSON.stringify(PostJsonData(channel, username)),
+      data: JSON.stringify(PostJsonData(channel,username,ResID,amount,Restype,subject,body)),
       beforeSend: function() {
         $('#loading').modal({
           closeViaDimmer: false
@@ -174,17 +207,17 @@ function pay(){
       }
     });
 
-    function PostJsonData(channel, username) {
+    function PostJsonData(channel,username,ResID,amount,Restype,subject,body) {
       var json = {
         "action": "Charge",
         "AppName": "APCloud",
         "UserName": username,
-        "Res_type": "FILM",
-        "ResID": 3,
-        "Subject": "电影",
-        "Body": "独立日",
+        "Res_type": Restype,
+        "ResID": ResID,
+        "Subject": subject,
+        "Body": body,
         "Channel": channel,
-        "amount": 1,
+        "amount": amount,
         "currency": "cny",
         "PayType": "Charge",
         'success_url': 'http://127.0.0.1/test/list/alipay.html',
@@ -197,43 +230,42 @@ function pay(){
   }
 
   // 已有账户>登录
-  $("#hasAcc").bind('click', function() {
-    $('#my-confirm').modal('close');
-    $('#my-login').modal({
-      onConfirm: function() {
-        var user = $('#logintext').val();
-        $.ajax({
-          url: 'http://139.159.0.30:8020/devicemanage/index.php/RestPingPP',
-          type: 'POST',
-          dataType: 'json',
-          data: JSON.stringify(PostUserData(user)),
-          success: function(data) {
-            if (data.paid == true) {
-              // window.location.href = window.location.href+'&username='+data.UserName+'&paid='+data.paid;
-              window.location.href = window.location.href;
-              store.set('userId', data.UserName);
-              store.set('paid', data.paid);
-            } else {
-              store.set('paid', data.paid);
-              $('#my-login').modal('close');
-              // $('#errormsg').modal({closeViaDimmer:false}).find(".am-modal-bd").text(data.error);
-              $('#errormsg').modal({
-                closeViaDimmer: false
-              }).find(".am-modal-bd").text('未查到购买记录');
-            }
-          },
-          beforeSend: function() {
-            $('#loading').modal({
-              closeViaDimmer: false
-            })
-          },
-          complete: function() {
-            $('#loading').modal('close');
-          }
-        })
-      }
-    });
-  });
+      // function modalLogin(username,ResID,Restype,subject,body){
+      //     $('#my-confirm').modal('close');
+      //       $('#my-login').modal({
+      //         onConfirm: function() {
+      //           var username = $('#logintext').val();
+      //           $.ajax({
+      //             url: 'http://139.159.0.30:8020/devicemanage/index.php/RestPingPP',
+      //             type: 'POST',
+      //             dataType: 'json',
+      //             data: JSON.stringify(PostUserData(username,ResID,Restype,subject,body)),
+      //             success: function(data) {
+      //               if (data.paid == true) {
+      //                 window.location.href = window.location.href;
+      //                 store.set('userId', data.UserName);
+      //                 store.set('paid', data.paid);
+      //               } else {
+      //                 store.set('paid', data.paid);
+      //                 $('#my-login').modal('close');
+      //                 // $('#errormsg').modal({closeViaDimmer:false}).find(".am-modal-bd").text(data.error);
+      //                 $('#errormsg').modal({
+      //                   closeViaDimmer: false
+      //                 }).find(".am-modal-bd").text('未查到购买记录');
+      //               }
+      //             },
+      //             beforeSend: function() {
+      //               $('#loading').modal({
+      //                 closeViaDimmer: false
+      //               })
+      //             },
+      //             complete: function() {
+      //               $('#loading').modal('close');
+      //             }
+      //           })
+      //         }
+      //       })
+      // };
 
   // post请求后的回调函数
   function funPay(ajaxData) {
@@ -347,10 +379,15 @@ $("#payErrorBack").ready(function(){
   store.set('paid', false);
 })
 
-  // -----------------------------
-
-  $(".pay_list_c1").on("click", function() {
-    $(this).addClass("on").parent('label').siblings().find('.pay_list_c1').removeClass("on");
-    var paytext = ($(this).siblings('span.am-fl').text());
+// 支付方式radio切换
+function paytoggle(paytogg){
+  $(paytogg).addClass("on").parent('label').siblings().find('.pay_list_c1').removeClass("on");
+    var paytext = ($(paytogg).siblings('span.am-fl').text());
     $("#paybtn").text('确认' + paytext);
-  })
+}
+
+function footerUrl() {
+   var url = window.location.url;
+   var freeurl =  GetQueryString("freeurl");
+   return freeurl;
+}

@@ -15,15 +15,17 @@ ul{
 }
 .list-bottom .am-icon-thumbs-up,.list-bottom .am-icon-star,.list-bottom .am-icon-comment{
 	color: #00aac3;}
-.list-bottom .am-fr{width: 40%;}
+.list-bottom .am-fr{width: 38%;}
 .list-bottom .am-fr span{cursor: pointer;float: right;margin-left: .8rem;}
-.list-bottom .am-fr span:before{margin-right: .4rem;}
+.list-bottom .am-fr span:last-child{margin-left: 0rem;}
+.list-bottom .am-fr span:before{margin-right: .2rem;}
 .list-bottom .list-sour span{border: 1px solid #00aac3;border-radius: 20px;padding: .1rem .5rem;margin-right: .3rem;}
 .list-main .am-list-item-hd a{
 	color: #000;
 }
 .list-news-hd h2,.list-news-hd span{
 	color: #00aac3;
+	font-size: 1.8rem;
 }
 .list-search-btn{
 	background-color: #fff;
@@ -68,6 +70,10 @@ ul{
 	font-size: 2rem;
 	line-height: 50px;
 	left: 15%;
+}
+.list-main .am-list-item-text{
+	-webkit-line-clamp:1 !important;
+	max-height: 1.3em !important;
 }
 .listmodal .am-modal-dialog{
 	border-radius:15px;
@@ -163,3 +169,20 @@ background-position: 0 0;
 }
 .memberMain .teacherName{vertical-align: middle;line-height: 60px;}
 .myblue{color:#00aac3;}
+.btn-down{
+	border-radius: 6px;
+	padding-right: 1em !important;
+	background-color: transparent;
+	border: 1px solid #00aac3;
+	color: #00aac3 !important;
+}
+// .list-main .downtext{
+// 	-webkit-line-clamp:2 !important;
+// 	max-height: 2.6em !important;
+// }
+.ulFeature{
+	padding-left: 0px;
+}
+.ulFeature > li {
+}
+.bgblue{background-color: #00aac3;}

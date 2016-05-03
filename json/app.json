@@ -3,10 +3,13 @@
 		"title": "360 VR",
 		"logourl": "http://s.amazeui.org/media/i/demos/bw-2014-06-19.jpg?imageView/1/w/1000/h/1000/q/80",
 		"logohref": "member.html",
-		"ico":"http://localhost/test/list/images/logo.ico",
+		"ico": "http://localhost/test/list/images/logo.ico",
 		"menus": [{
 			"title": "首页",
 			"href": "index.html"
+		}, {
+			"title": "工具下载",
+			"href": "download.html"
 		}]
 	},
 
@@ -17,9 +20,11 @@
 	"classifys": [{
 		"uid": 1,
 		"sortid": 1,
+		"type": "360VR",
 		"title": "360导览",
 		"more_href": "listdetail_video.html",
 		"list": [{
+			"ResID": "001",
 			"title": "建筑",
 			"imgurl": "images/guide01.png",
 			"href": "../viewer/player.html?xml=../video/demotour-stereoscopic/tour.xml",
@@ -32,6 +37,7 @@
 			},
 			"tags": ["football", "china", "china3"]
 		}, {
+			"ResID": "002",
 			"title": "博物馆",
 			"imgurl": "images/guide02.png",
 			"href": "../viewer/player.html?xml=../video/demotour-kuchlerhaus/tour.xml",
@@ -47,9 +53,11 @@
 	}, {
 		"uid": 2,
 		"sortid": 2,
+		"type": "video",
 		"title": "运动视频",
 		"more_href": "listdetail_video.html",
 		"list": [{
+			"ResID": "003",
 			"title": "全景死亡体验--垂直下落过山车",
 			"imgurl": "images/sport01.jpg",
 			"href": "../viewer/player.html?xml=../video/videopano7/videopano.xml",
@@ -62,6 +70,7 @@
 			},
 			"tags": ["football", "china"]
 		}, {
+			"ResID": "004",
 			"title": "VR视频F-5战斗机驾驶舱体验飞行",
 			"imgurl": "images/sport02.png",
 			"href": "../viewer/player.html?xml=../video/videopano/videopano.xml",
@@ -74,6 +83,7 @@
 			},
 			"tags": ["football", "china"]
 		}, {
+			"ResID": "005",
 			"title": "阿尔卑斯滑雪",
 			"imgurl": "images/sport03.png",
 			"href": "../viewer/player.html?xml=../video/videopano6/videopano.xml",
@@ -86,6 +96,7 @@
 			},
 			"tags": ["football", "china"]
 		}, {
+			"ResID": "006",
 			"title": "翼装飞翔360度全景视角",
 			"imgurl": "images/sport04.png",
 			"href": "../viewer/player.html?xml=../video/videopano3/videopano.xml",
@@ -98,6 +109,7 @@
 			},
 			"tags": ["football", "china"]
 		}, {
+			"ResID": "007",
 			"title": "战斗机空战",
 			"imgurl": "images/sport05.jpg",
 			"href": "../viewer/player.html?xml=../video/videopano5/videopano.xml",
@@ -113,9 +125,11 @@
 	}, {
 		"uid": 3,
 		"sortid": 3,
+		"type": "video",
 		"title": "旅游视频",
 		"more_href": "listdetail_video.html",
 		"list": [{
+			"ResID": "008",
 			"title": "沙漠",
 			"imgurl": "images/tour01.png",
 			"href": "../viewer/player.html?xml=../video/videopano1/videopano.xml",
@@ -128,6 +142,7 @@
 			},
 			"tags": ["football", "china"]
 		}, {
+			"ResID": "009",
 			"title": "神秘而梦幻的中国云南之旅",
 			"imgurl": "images/tour02.png",
 			"href": "../viewer/player.html?xml=../video/videopano4/videopano.xml",
@@ -140,6 +155,7 @@
 			},
 			"tags": ["football", "china"]
 		}, {
+			"ResID": "010",
 			"title": "SNH48不想太伟大 bixude",
 			"imgurl": "images/tour03.png",
 			"href": "../viewer/player.html?xml=../video/videopano2/videopano.xml",
@@ -151,6 +167,104 @@
 				"pay": 0.1
 			},
 			"tags": ["football", "china"]
+		}]
+	}, {
+		"uid": 4,
+		"sortid": 4,
+		"type": "app",
+		"title": "VR播放辅助工具——浏览器",
+		"more_href": "listdetail_app.html",
+		"list": [{
+			"ResID": "app-001",
+			"title": "火狐浏览器",
+			"imgurl": "images/firefox.png",
+			"href": "http://www.share360.net/app/firefox_browser.apk",
+			"downloads": 100,
+			"desc": "快速、智能、安全的移动浏览器，继承Mozilla Firefox火狐非凡桌面浏览特性，Firefox for Android带给您快速、智能、安全的移动互联网优质体验。它速度超快，简单易用，支持多项个性化设置，并通过最新的安全性与隐私权保护功能最大限度保护您的网络安全。 ",
+			"features": [{
+				"intro": "快速",
+				"content": ["快速浏览：从启动到页面加载，到平移和缩放，都有超快的浏览体验", "智能工具栏：轻点智能工具栏，即可获得经常访问的网站列表、书签和历史记录，点击访问，无需输入 ", "便捷：简洁易用标签页便于您同时浏览多个站点", "加载项：提供无图阅读模式，流量受限时启用也能便捷查看网页 "]
+			}, {
+				"intro": "智能",
+				"content": ["同步：从任何装置存取您浏览器的历史纪录、书签、密码，以及开启的标签页 ", "阅读：自动将零散的文章组合成美观易读的页面 ", "插件：提供多种功能插件以丰富您的浏览器，安装简单，易于管理"]
+			}, {
+				"intro": "安全",
+				"content": ["进阶安全性：控制您的隐私、安全性，以及您想在网络上分享多少数据 ", "隐私保护：支持Do Not Track （请勿跟踪），保护用户隐私 ", "放心浏览：内建网络欺诈和恶意软件检测提醒"]
+			}],
+			"clickscnt": 7,
+			"favritescnt": 6,
+			"msgscnt": 8,
+			"payment": {
+				"pay": 0.1
+			},
+			"tags": ["football", "china"]
+		}, {
+			"ResID": "app-002",
+			"title": "谷歌浏览器",
+			"imgurl": "images/chrome.png",
+			"href": "http://www.share360.net/app/chrome_browser.apk",
+			"downloads": 200,
+			"desc": "移动平台最快的浏览器！，Google Chrome浏览器不仅在桌面设备上表现卓越，在Android手机和平板电脑上也可让您畅享快速流畅的浏览体验。借助Google Chrome，您可以通过标签页同步功能接着浏览在其他设备上打开的网页、通过语音进行搜索，并可在浏览时节省多达50%的数据流量。",
+			"features": [{
+				"intro": "在设备之间保持同步",
+				"content": ["您可以在笔记本电脑、手机或平板电脑上无缝访问并打开标签页和书签 "]
+			}, {
+				"intro": "节省数据流量",
+				"content": ["您可以在浏览时节省多达50%的移动数据流量"]
+			}, {
+				"intro": "浏览速度更快",
+				"content": ["您可以在即搜即得的搜索结果中进行选择，并可快速访问之前访问过的网页"]
+			}, {
+				"intro": "通过语音进行搜索",
+				"content": ["利用Google语音搜索的强大功能，您无需输入文字即可随时随地进行搜索"]
+			}, {
+				"intro": "网页翻译",
+				"content": ["您可以轻松浏览任何语言的网页"]
+			}, {
+				"intro": "直观的手势",
+				"content": ["您可以打开任意多个标签页，并可通过在工具栏上左右滑动来快速切换显示的标签页"]
+			}, {
+				"intro": "私密性强",
+				"content": ["您使用隐身模式浏览时，系统不会保存您的任何浏览记录"]
+			}],
+			"clickscnt": 7,
+			"favritescnt": 6,
+			"msgscnt": 8,
+			"payment": {
+				"pay": 0.1
+			},
+			"tags": ["football", "china"]
+		}]
+	}, {
+		"uid": 5,
+		"sortid": 5,
+		"type": "app",
+		"title": "VR播放工具——360Player",
+		"more_href": "listdetail_app.html",
+		"list": [{
+			"ResID": "app-003",
+			"title": "360Player",
+			"imgurl": "images/360player.png",
+			"href": "http://www.share360.net/app/360Player1.0.apk",
+			"downloads": 500,
+			"desc": "360Player是专门应用于Android手机的视频播放。支持VR视频、360度全景视频播放，实现在手机上全景视频观看和体验，并有不同播放模式切换；同时支持普通视频的播放。",
+			"features": [{
+				"intro": "VR视频、全景视频播放：",
+				"content": ["选择手机存储的VR视频、全景视频片源，可在无VR眼镜的情况下，通过上下左右移动手机来实现画面场景的流畅观看；－有VR眼镜的时候，可以切换播放模式，通过VR眼镜实现更好的全景播放和体验。"]
+			}, {
+				"intro": "普通视频播放：",
+				"content": ["支持常见普通视频编解码。"]
+			}, {
+				"intro": "全景视频体验短片：",
+				"content": ["应用提供免费的全景视频短片，可免费体验浏览。"]
+			}],
+			"clickscnt": 0,
+			"favritescnt": 0,
+			"msgscnt": 0,
+			"payment": {
+				"pay": 0
+			},
+			"tags": [""]
 		}]
 	}]
 
