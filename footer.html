@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="js/app.js"></script>
+</head>
+<body ng-controller="listCtrl" ng-cloak ng-jq>
+    <footer data-am-widget="footer"class="am-footer am-footer-default" data-am-footer="{}" ng-show="{{footer.show}}">
+    <div class="am-footer-miscs">
+      <a ng-href="{{freeurl}}" id="freeurl" class="am-hide-lg-only">
+        <div class="am-header am-header-default bgblue">
+        <h1 class="am-header-title" style="margin: 0 25%;">
+           <img class="am-img-responsive" style="display: inline;" ng-src="{{footer.linkimg}}">
+           <span style="display: inline;">{{footer.linkdesc}}</span>
+        </h1>
+        </div>
+      </a>
+      <p>由 <a ng-href="{{footer.website}}" title="{{footer.company}}"target="_blank" class="">{{footer.company}}</a> 提供技术支持</p>
+    </div>
+  </footer>
+</body>
+</html>

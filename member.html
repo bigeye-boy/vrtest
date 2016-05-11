@@ -1,0 +1,171 @@
+<!doctype html>
+<html class="no-js" ng-app="listApp" ng-controller="listCtrl" ng-cloak>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <title>个人中心</title>
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileColor" content="#0e90d2">
+
+  <link rel="stylesheet" href="css/amazeui.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="shortcut icon" ng-href="{{header.ico}}" type="image/x-icon">
+  <script src="js/angular.1.4.6.min.js"></script> 
+</head>
+<body style="background-color: #eee;">
+<!--在这里编写你的代码-->
+<div class="listMain">
+<header class="am-topbar am-header-default" data-am-widget="header" style="position: relative;" ng-include="'header.html'"></header>
+    <!-- 页头结束 -->
+<style>.am-list, .am-topbar{margin-bottom: 0px;}</style>
+    <div class="agencyBody memberMain">    
+        <div class="am-g am-g-fixed memberName">
+            <div class="am-u-sm-3">
+                <img class="am-circle am-img-thumbnail" src="http://s.amazeui.org/media/i/demos/bw-2014-06-19.jpg?imageView/1/w/1000/h/1000/q/80" alt="" width="65" height="65">
+            </div>
+            <div class="am-u-sm-9 teacherName">
+                 <div><strong class="am-text-lg">15652598853</strong>&nbsp;&nbsp;<span class="myblue am-icon-vimeo" style="color: #ffc73d;"></span></div>
+            </div>
+        </div> 
+        <div class="am-g am-g-fixed">
+          <div  class="am-list-news am-panel am-panel-default">
+            <!--列表标题-->
+              <div class="am-list-news-hd am-cf am-panel-hd">
+                 <!--带更多链接-->
+                  <a ng-href="" class="am-link-muted">
+                    <h2 class="am-fl am-text-truncate"><span class="myblue am-icon-envelope"></span>&nbsp;&nbsp;消息</h2>
+                    <span class="am-list-news-more am-fr">更多 &raquo;</span>
+                  </a>
+              </div>
+          </div> 
+          <div data-am-widget="list_news" class="am-list-news am-panel am-panel-default">
+              <div class="am-list-news-hd am-cf am-panel-hd">
+                  <a ng-href="" class="am-link-muted">
+                    <h2 class="am-fl am-text-truncate"><span class="myblue am-icon-clock-o"></span>&nbsp;&nbsp;播放记录</h2>
+                    <span class="am-list-news-more am-fr">更多 &raquo;</span>
+                  </a>
+              </div>
+              <div class="am-list-news-bd am-panel-bd">
+                  <div class="am-g">
+                    <div class="am-u-sm-4">
+                      <div class="am-thumbnail">
+                        <img src="images/sport01.jpg" alt=""/>
+                        <h3 class="am-thumbnail-caption">图片标题</h3>
+                      </div>
+                    </div>
+
+                    <div class="am-u-sm-4">
+                      <a href="#" class="am-thumbnail">
+                        <img src="images/sport03.png" alt=""/>
+                        <figcaption class="am-thumbnail-caption">图片标题</figcaption>
+                      </a>
+                    </div>
+                    <div class="am-u-sm-4">
+                      <figure class="am-thumbnail">
+                        <img src="images/sport03.png" alt=""/>
+                        <figcaption class="am-thumbnail-caption">图片标题</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+              </div>
+          </div> 
+          <div data-am-widget="list_news" class="am-list-news am-panel am-panel-default">
+              <div class="am-list-news-hd am-cf  am-panel-hd">
+                  <a ng-href="" class="am-link-muted">
+                    <h2 class="am-fl am-text-truncate"><span class="myblue am-icon-dollar"></span>&nbsp;&nbsp;付费记录</h2>
+                    <span class="am-list-news-more am-fr">更多 &raquo;</span>
+                  </a>
+              </div>
+              <div class="am-list-news-bd am-panel-bd">
+                  <div class="am-g">
+                      <div class="am-u-sm-4">
+                        <div class="am-thumbnail">
+                          <img src="images/sport03.png" alt=""/>
+                          <h3 class="am-thumbnail-caption">图片标题</h3>
+                        </div>
+                      </div>
+
+                      <div class="am-u-sm-4">
+                        <a href="#" class="am-thumbnail">
+                          <img src="images/sport03.png" alt=""/>
+                          <figcaption class="am-thumbnail-caption">图片标题</figcaption>
+                        </a>
+                      </div>
+                      <div class="am-u-sm-4">
+                        <figure class="am-thumbnail">
+                          <img src="images/sport03.png" alt=""/>
+                          <figcaption class="am-thumbnail-caption">图片标题</figcaption>
+                        </figure>
+                      </div>
+                    </div>
+              </div>
+          </div>
+          <div data-am-widget="list_news" class="am-list-news am-panel am-panel-default">
+            <!--列表标题-->
+              <div class="am-list-news-hd am-cf am-panel-hd">
+                 <!--带更多链接-->
+                  <a ng-href="" class="am-link-muted">
+                    <h2 class="am-fl am-text-truncate"><span class="myblue am-icon-envelope"></span>&nbsp;&nbsp;帮助反馈</h2>
+                    <span class="am-list-news-more am-fr">更多 &raquo;</span>
+                  </a>
+              </div>
+              <div class="am-list-news-hd am-cf am-panel-hd">
+                     <!--带更多链接-->
+                      <a ng-href="" class="am-link-muted">
+                        <h2 class="am-fl am-text-truncate"><span class="myblue am-icon-envelope"></span>&nbsp;&nbsp;地区</h2>
+                        <span class="am-list-news-more am-fr">更多 &raquo;</span>
+                      </a>
+                  </div>
+              <div class="am-list-news-hd am-cf am-panel-hd">
+                     <!--带更多链接-->
+                      <a ng-href="" class="am-link-muted">
+                        <h2 class="am-fl am-text-truncate"><span class="myblue am-icon-envelope"></span>&nbsp;&nbsp;设置</h2>
+                        <span class="am-list-news-more am-fr">更多 &raquo;</span>
+                      </a>
+                  </div>
+          </div>  
+        </div>             
+    </div>
+
+<footer ng-include = "'footer.html'"></footer>
+
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/amazeui.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script>
+ var listapp = angular.module('listApp', []);
+    listapp.controller('listCtrl', function($scope,$http) {
+        $http.get("json/app.json")
+        .success(function(response){
+            $scope.header = response.header;
+            $scope.footer = response.footer;
+            $scope.list = response;
+            var classArray = response.classifys; //获取类别数组
+            var index = fClass(classArray);
+            $scope.classifys = response.classifys[index];
+          })
+});
+</script>
+</body>
+</html>

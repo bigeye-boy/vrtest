@@ -1,0 +1,482 @@
+{
+	"header": {
+		"title": "巽震数码",
+		"logourl": "images/logo.png",
+		"logohref": "http://www.yoursclass.com",
+		"ico": "http://localhost/test/list/images/logo.ico",
+		"menus": [{
+			"title": "首页",
+			"href": "index.html"
+		}, {
+			"title": "工具下载",
+			"href": "download.html"
+		},{
+			"title":"CMMB视频",
+			"href":"http://192.168.11.1/cmmb/html/index.html"
+		},{
+			"title":"图库",
+			"href":"photolist.html"
+		}]
+	},
+	"footer":{
+		"show":true,
+		"linkimg":"images/wifi.png",
+		"linkdesc":"点击一键上网",
+		"company":"欣广视科技",
+		"website":"http://www.yoursclass.com"
+	},
+	"search": {
+		"search_href": "http://domain.com/fulltextserach.html",
+		"hot_keywords": ["music", "videos", "南海问题"]
+	},
+	"slides":[
+		{
+			"imgurl":"images/guide01.jpg",
+			"href":"http://www.baidu.com",
+			"desc":"动态插入的 slide1"
+		},
+		{
+			"imgurl":"images/guide01.jpg",
+			"href":"http://www.baidu.com",
+			"desc":"动态插入的 slide2"
+		},{
+			"imgurl":"images/guide01.jpg",
+			"href":"http://www.baidu.com",
+			"desc":"动态插入的 slide3"
+		}
+	],
+	"classifys": [{
+			"uid": 10,
+			"sortid": 10,
+			"type": "360VR",
+			"title": "旅游教学",
+			"more_href": "listdetail_video.html",
+			"list": [{
+				"ResID": "001",
+				"title": "全景景区",
+				"imgurl": "images/xunzhen.jpg",
+				"href": "../viewer/player.html?xml=../video/demotour-stereoscopic/tour.xml",
+				"desc": "360度全景旅游景区",
+				"clickscnt": 7,
+				"favritescnt": 6,
+				"msgscnt": 8,
+				"payment": {
+					"pay": 0.1
+				},
+				"tags": ["立体", "旅游", "导览", "教学"]
+			}]
+		},
+
+		{
+			"uid": 1,
+			"sortid": 1,
+			"type": "360VR",
+			"title": "360导览",
+			"more_href": "listdetail_video.html",
+			"list": [{
+				"ResID": "002",
+				"title": "建筑",
+				"imgurl": "images/guide01.jpg",
+				"href": "../viewer/player.html?xml=../video/demotour-stereoscopic/tour.xml",
+				"desc": "360度建筑",
+				"clickscnt": 7,
+				"favritescnt": 6,
+				"msgscnt": 8,
+				"payment": {
+					"pay": 0.1
+				},
+				"tags": ["立体", "建筑", "导览"]
+			}, {
+				"title": "博物馆",
+				"imgurl": "images/guide02.jpg",
+				"href": "../viewer/player.html?xml=../video/demotour-kuchlerhaus/tour.xml",
+				"desc": "360度逛博物馆",
+				"clickscnt": 7,
+				"favritescnt": 6,
+				"msgscnt": 8,
+				"payment": {
+					"pay": 0.1
+				},
+				"tags": ["导览", "博物馆"]
+			}]
+		}, {
+			"uid": 2,
+			"sortid": 2,
+			"type": "video",
+			"title": "运动视频",
+			"more_href": "listdetail_video.html",
+			"list": [{
+				"ResID": "003",
+				"title": "全景死亡体验--垂直下落过山车",
+				"imgurl": "images/sport01.jpg",
+				"href": "../viewer/player.html?xml=../video/videopano7/videopano.xml",
+				"desc": "全景死亡体验！世界上最丧心病狂的垂直过山车！荷兰主题乐园Efteling最刺激的主题过山车“男爵1898”，将带游客来到19世纪的荷兰采矿业。游客将化身为当时的矿工，从37.5米的高度沿着井筒自由下落，最高时速超过90公里。“没什么比面朝天空，俯冲10层楼的高度更刺激的了。对接下来发生什么事，你真的就什么也不知道了。”乘坐它会带你盘旋直冲云霄，也会带你俯冲钻入地洞；乘坐它会让你惊叫连连，会让你感受穿越般的紧张刺激！ ",
+				"clickscnt": 7,
+				"favritescnt": 6,
+				"msgscnt": 8,
+				"payment": {
+					"pay": 0.1
+				},
+				"tags": ["全景", "过山车"]
+			}, {
+				"title": "阿尔卑斯滑雪",
+				"imgurl": "images/sport03.jpg",
+				"href": "../viewer/player.html?xml=../video/videopano6/videopano.xml",
+				"desc": "360度全景VR视频带你领略krvavec滑雪胜地（斯洛文尼亚阿尔卑斯山滑雪）",
+				"clickscnt": 7,
+				"favritescnt": 6,
+				"msgscnt": 8,
+				"payment": {
+					"pay": 0.1
+				},
+				"tags": ["滑雪", "阿尔卑斯山"]
+			}, {
+				"title": "翼装飞翔360度全景视角",
+				"imgurl": "images/sport04.jpg",
+				"href": "../viewer/player.html?xml=../video/videopano3/videopano.xml",
+				"desc": "【4K VR全景视频】勇者游戏翼装飞翔360度全景视角",
+				"clickscnt": 7,
+				"favritescnt": 6,
+				"msgscnt": 8,
+				"payment": {
+					"pay": 0.1
+				},
+				"tags": ["滑翔", "全景"]
+			}, {
+				"title": "战斗机空战",
+				"imgurl": "images/sport05.jpg",
+				"href": "../viewer/player.html?xml=../video/videopano5/videopano.xml",
+				"desc": "【4K VR全景视频】战斗机空战",
+				"clickscnt": 7,
+				"favritescnt": 6,
+				"msgscnt": 8,
+				"payment": {
+					"pay": 0.1
+				},
+				"tags": ["空战", "战斗机"]
+			}]
+		}, {
+			"uid": 3,
+			"sortid": 3,
+			"type": "video",
+			"title": "旅游视频",
+			"more_href": "listdetail_video.html",
+			"list": [{
+					"ResID": "004",
+					"title": "迪拜风光",
+					"imgurl": "images/tour04.jpg",
+					"href": "../viewer/player.html?xml=../video/videopano/videopano.xml",
+					"desc": "从空中俯瞰迪拜的风光",
+					"clickscnt": 7,
+					"favritescnt": 6,
+					"msgscnt": 8,
+					"payment": {
+						"pay": 0.1
+					},
+					"tags": ["航拍", "迪拜"]
+				}, {
+					"title": "沙漠",
+					"imgurl": "images/tour01.jpg",
+					"href": "../viewer/player.html?xml=../video/videopano1/videopano.xml",
+					"desc": "360度全景VR视频带你领略沙漠",
+					"clickscnt": 7,
+					"favritescnt": 6,
+					"msgscnt": 8,
+					"payment": {
+						"pay": 0.1
+					},
+					"tags": ["football", "china"]
+				},
+
+				{
+					"title": "神秘而梦幻的中国云南之旅",
+					"imgurl": "images/tour02.jpg",
+					"href": "../viewer/player.html?xml=../video/videopano4/videopano.xml",
+					"desc": "云梦萦绕，满江春意神秘而梦幻的中国云南，一场视觉盛宴等你开启！这场”空中旅行“定让你乐不思蜀！",
+					"clickscnt": 7,
+					"favritescnt": 6,
+					"msgscnt": 8,
+					"payment": {
+						"pay": 0.1
+					},
+					"tags": ["风光", "云南"]
+				}, {
+					"title": "SNH48不想太伟大 bixude",
+					"imgurl": "images/tour03.jpg",
+					"href": "../viewer/player.html?xml=../video/videopano2/videopano.xml",
+					"desc": "SNH48女神们陪你过圣诞啦！“不要学习一整天 那会变傻瓜”“不想天天都上班 偶尔也要放假”“生命不要变复杂 做自己好啦”这首歌的歌词简直唱出所有人的心情，少女们唱出来后更是格外暖心。",
+					"clickscnt": 7,
+					"favritescnt": 6,
+					"msgscnt": 8,
+					"payment": {
+						"pay": 0.1
+					},
+					"tags": ["演唱会", "女神"]
+				}
+			]
+		},
+		{
+			"uid": 4,
+			"sortid": 4,
+			"type": "video",
+			"title": "课程培训",
+			"more_href": "listdetail_video.html",
+			"list": [
+
+				{	
+					"ResID": "005",
+					"title": "上课",
+					"imgurl": "images/study01.jpg",
+					"href": "../viewer/player.html?xml=../video/videopano8/videopano.xml",
+					"desc": "空杯 学习 进步",
+					"clickscnt": 7,
+					"favritescnt": 6,
+					"msgscnt": 8,
+					"payment": {
+						"pay": 0.1
+					},
+					"tags": ["课程", "培训"]
+				}
+			]
+		},
+		{
+			"uid": 6,
+			"sortid": 6,
+			"type": "video",
+			"title": "2D视频",
+			"more_href": "listdetail_video.html",
+			"list": [
+
+				{	
+					"ResID": "007",
+					"title": "我的2D视频",
+					"imgurl": "images/guide02.jpg",
+					"href": "video.html",
+					"source" : "../video/videopano1/video-1920x960.mp4",
+					"desc": "2D平面视频",
+					"clickscnt": 7,
+					"favritescnt": 6,
+					"msgscnt": 8,
+					"payment": {
+						"pay": 0.1
+					},
+					"tags": ["课程", "培训"]
+				}
+			]
+		}, {
+			"uid": 5,
+			"sortid": 5,
+			"type": "video",
+			"title": "巽震数码",
+			"more_href": "listdetail_video.html",
+			"list": [{
+				"ResID": "006",
+				"title": "山路探索",
+				"imgurl": "images/G2.jpg",
+				"href": "../viewer/player.html?xml=../video/videopano10/videopano.xml",
+				"desc": "360度全景VR视频带你领略山水间的山路",
+				"clickscnt": 7,
+				"favritescnt": 6,
+				"msgscnt": 8,
+				"payment": {
+					"pay": 0.1
+				},
+				"tags": ["风景", "旅游"]
+			}]
+		}, {
+			"uid": 11,
+			"sortid": 4,
+			"type": "app",
+			"title": "VR播放辅助工具——浏览器",
+			"more_href": "listdetail_app.html",
+			"list": [{
+				"ResID": "app-001",
+				"title": "火狐浏览器",
+				"imgurl": "images/firefox.png",
+				"href": "../app/firefox_browser.apk",
+				"downloads": 100,
+				"desc": "快速、智能、安全的移动浏览器，继承Mozilla Firefox火狐非凡桌面浏览特性，Firefox for Android带给您快速、智能、安全的移动互联网优质体验。它速度超快，简单易用，支持多项个性化设置，并通过最新的安全性与隐私权保护功能最大限度保护您的网络安全。 ",
+				"features": [{
+					"intro": "快速",
+					"content": ["快速浏览：从启动到页面加载，到平移和缩放，都有超快的浏览体验", "智能工具栏：轻点智能工具栏，即可获得经常访问的网站列表、书签和历史记录，点击访问，无需输入 ", "便捷：简洁易用标签页便于您同时浏览多个站点", "加载项：提供无图阅读模式，流量受限时启用也能便捷查看网页 "]
+				}, {
+					"intro": "智能",
+					"content": ["同步：从任何装置存取您浏览器的历史纪录、书签、密码，以及开启的标签页 ", "阅读：自动将零散的文章组合成美观易读的页面 ", "插件：提供多种功能插件以丰富您的浏览器，安装简单，易于管理"]
+				}, {
+					"intro": "安全",
+					"content": ["进阶安全性：控制您的隐私、安全性，以及您想在网络上分享多少数据 ", "隐私保护：支持Do Not Track （请勿跟踪），保护用户隐私 ", "放心浏览：内建网络欺诈和恶意软件检测提醒"]
+				}],
+				"clickscnt": 0,
+				"favritescnt": 0,
+				"msgscnt": 0,
+				"payment": {
+					"pay": 0
+				},
+				"tags": [""]
+			}, {
+				"ResID": "app-002",
+				"title": "谷歌浏览器",
+				"imgurl": "images/chrome.png",
+				"href": "../app/chrome_browser.apk",
+				"downloads": 200,
+				"desc": "移动平台最快的浏览器！，Google Chrome浏览器不仅在桌面设备上表现卓越，在Android手机和平板电脑上也可让您畅享快速流畅的浏览体验。借助Google Chrome，您可以通过标签页同步功能接着浏览在其他设备上打开的网页、通过语音进行搜索，并可在浏览时节省多达50%的数据流量。",
+				"features": [{
+					"intro": "在设备之间保持同步",
+					"content": ["您可以在笔记本电脑、手机或平板电脑上无缝访问并打开标签页和书签 "]
+				}, {
+					"intro": "节省数据流量",
+					"content": ["您可以在浏览时节省多达50%的移动数据流量"]
+				}, {
+					"intro": "浏览速度更快",
+					"content": ["您可以在即搜即得的搜索结果中进行选择，并可快速访问之前访问过的网页"]
+				}, {
+					"intro": "通过语音进行搜索",
+					"content": ["利用Google语音搜索的强大功能，您无需输入文字即可随时随地进行搜索"]
+				}, {
+					"intro": "网页翻译",
+					"content": ["您可以轻松浏览任何语言的网页"]
+				}, {
+					"intro": "直观的手势",
+					"content": ["您可以打开任意多个标签页，并可通过在工具栏上左右滑动来快速切换显示的标签页"]
+				}, {
+					"intro": "私密性强",
+					"content": ["您使用隐身模式浏览时，系统不会保存您的任何浏览记录"]
+				}],
+				"clickscnt": 0,
+				"favritescnt": 0,
+				"msgscnt": 0,
+				"payment": {
+					"pay": 0
+				},
+				"tags": [""]
+			}]
+		}, {
+			"uid": 12,
+			"sortid": 5,
+			"type": "app",
+			"title": "VR播放工具——360Player",
+			"more_href": "listdetail_app.html",
+			"list": [{
+				"ResID": "app-003",
+				"title": "360Player",
+				"imgurl": "images/360player.png",
+				"href": "../app/360Player1.0.apk",
+				"downloads": 500,
+				"desc": "360Player是专门应用于Android手机的视频播放。支持VR视频、360度全景视频播放，实现在手机上全景视频观看和体验，并有不同播放模式切换；同时支持普通视频的播放。",
+				"features": [{
+					"intro": "VR视频、全景视频播放：",
+					"content": ["选择手机存储的VR视频、全景视频片源，可在无VR眼镜的情况下，通过上下左右移动手机来实现画面场景的流畅观看；－有VR眼镜的时候，可以切换播放模式，通过VR眼镜实现更好的全景播放和体验。"]
+				}, {
+					"intro": "普通视频播放：",
+					"content": ["支持常见普通视频编解码。"]
+				}, {
+					"intro": "全景视频体验短片：",
+					"content": ["应用提供免费的全景视频短片，可免费体验浏览。"]
+				}],
+				"clickscnt": 0,
+				"favritescnt": 0,
+				"msgscnt": 0,
+				"payment": {
+					"pay": 0
+				},
+				"tags": [""]
+			}]
+		},
+		{
+			"uid": 13,
+			"sortid": 6,
+			"type": "app",
+			"title": "本地二维码扫描工具——二维码扫描",
+			"more_href": "listdetail_app.html",
+			"list": [{
+				"ResID": "app-004",
+				"title": "二维码扫描",
+				"imgurl": "images/erweima.png",
+				"href": "../app/mobi.thinkchange.android.qrcode.apk ",
+				"downloads": 120,
+				"desc": "二维码扫描是专业的我查查扫一扫、条码，二维码生成、记录管理工具。",
+				"features": [{
+					"intro": "快速：",
+					"content": ["快速开启我查查，扫一扫条形码扫描商品信息。"]
+				}, {
+					"intro": "智能：",
+					"content": ["购物时我查查扫描商品条码，商品信息便能显示，并能对比淘宝商城价格。 ","二维码下载页面中，扫码可直接下载。"]
+				}, {
+					"intro": "支持二维码类型：",
+					"content": ["文本、联系人、WiFi网络、短信、Email、url链接、火车票、地税发票等。"]
+				},{
+					"intro":"编辑功能强大：",
+					"content":["二维码图片编辑功能提供样式设置；嵌入图标；改变图案、背景、渐变和定位点颜色；添加标题等功能；"]
+				}],
+				"clickscnt": 0,
+				"favritescnt": 0,
+				"msgscnt": 0,
+				"payment": {
+					"pay": 0
+				},
+				"tags": [""]
+			}]
+		},
+		{
+			"uid": 14,
+			"sortid": 7,
+			"type": "photo",
+			"title": "图库",
+			"more_href": "photolist.html",
+			"list": [{
+				"ResID": "photo-001",
+				"title": "远方 有一个地方 那里种有我们的梦想",
+				"imgurl": "images/tour01.jpg",
+				"href": "gallery.html",
+				"downloads": 0,
+				"desc": "二维码扫描是专业的我查查扫一扫、条码，二维码生成、记录管理工具。",
+				"features": [{
+					"imghref": "images/tour01.jpg",
+					"content": ["快速开启我查查。"]
+				}, {
+					"imghref": "images/tour02.jpg",
+					"content": ["购物时我查查扫描商品条码。"]
+				}, {
+					"imghref": "images/tour03.jpg",
+					"content": ["文本、联系人。"]
+				},{
+					"imghref":"images/tour04.jpg",
+					"content":["二维码图片编辑功能"]
+				}],
+				"clickscnt": 12,
+				"favritescnt": 13,
+				"msgscnt": 44,
+				"payment": {
+					"pay": 0
+				},
+				"tags": ["图片"]
+			},{
+				"ResID": "photo-002",
+				"title": "那里种有我们的梦想",
+				"imgurl": "images/tour02.jpg",
+				"href": "gallery.html",
+				"downloads": 0,
+				"desc": "二维码扫描是专业的我查查扫一扫、条码，二维码生成、记录管理工具。",
+				"features": [{
+					"imghref": "images/sport01.jpg",
+					"content": ["快速开启我查查。"]
+				}, {
+					"imghref": "images/sport02.jpg",
+					"content": ["购物时我查查"]
+				}, {
+					"imghref": "images/sport03.jpg",
+					"content": ["文本、联系人。"]
+				},{
+					"imghref": "images/sport04.jpg",
+					"content":["二维码图片编辑功能"]
+				}],
+				"clickscnt": 12,
+				"favritescnt": 13,
+				"msgscnt": 44,
+				"payment": {
+					"pay": 0
+				},
+				"tags": ["图片"]
+			}]
+		}]
+}

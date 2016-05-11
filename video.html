@@ -1,0 +1,101 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <title>视频</title>
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileColor" content="#0e90d2">
+
+  <link rel="stylesheet" href="css/amazeui.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="js/angular.1.4.6.min.js"></script> 
+</head>
+<body ng-app="listApp" ng-controller="listCtrl" ng-cloak>
+<!--在这里编写你的代码-->
+<div class="listMain">
+<header class="am-topbar am-header-default" data-am-widget="header" style="position: relative;" ng-include="'header.html'"></header>
+    <!-- 页头结束 -->
+
+    <div class="agencyBody">    
+        <div class="am-g am-g-fixed am-margin-top">
+            <div class="am-u-sm-0 am-u-md-0 am-u-lg-9"></div>
+            <div class="am-u-sm-12 am-u-md-12 am-u-lg-3">
+               <div class="am-g">
+                  <div class="am-u-lg-12">
+                    <div class="am-input-group">
+                      <input type="text" class="am-form-field" placeholder="请输入搜索内容" id="searchText">
+                      <span class="am-input-group-btn">
+                        <button class="am-btn am-btn-default list-search-btn" type="button" id="searchBtn"><span class="am-icon-search"></span> </button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>  
+        <div class="am-g am-g-fixed am-margin-top" ng-repeat="classifys in lists.classifys | filter:class">
+            <article data-am-widget="paragraph" class="am-paragraph am-paragraph-default" ng-repeat="resid in classifys.list | filter:resid">
+                <h4>{{resid.title}}</h4>
+                <p class=paragraph-default-p>{{resid.desc}}</p>
+                <video controls="controls" width="100%" poster="{{resid.imgurl}}">
+                    <source ng-src="{{resid.source}}" type="video/mp4">
+                </video>
+            </article>
+
+              <div data-am-widget="gotop" class="am-gotop am-gotop-fixed" >
+                <a href="#top" title="回到顶部">
+                    <span class="am-gotop-title">回到顶部</span>
+                      <i class="am-gotop-icon am-icon-arrow-up am-active"></i>
+                </a>
+              </div>
+        </div>  
+    </div>
+
+<footer ng-include = "'footer.html'"></footer>
+
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/amazeui.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script>
+ var listapp = angular.module('listApp', []);
+    listapp.controller('listCtrl', function($scope,$http) {
+        $http.get("json/app.json")
+        .success(function(response){
+            $scope.header = response.header;
+            $scope.footer = response.footer;
+            $scope.lists = response;
+            $scope.class = function(e){
+              return e.uid == GetQueryString("uid");
+            }
+            $scope.resid = function(e){
+              return e.ResID == GetQueryString("resid");
+            }
+
+          })
+});
+</script>
+</body>
+</html>
+
+ 
