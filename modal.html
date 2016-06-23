@@ -1,0 +1,96 @@
+<div class="modalDiv"><!-- 模态框 -->
+
+                  <!-- 付款确认 -->
+                  <div class="am-modal am-modal-confirm listmodal" tabindex="-1" id="my-confirm"> 
+                    <div class="am-modal-dialog">
+                      <div class="am-modal-hd">付款确认</div>
+                      <div class="am-modal-bd">
+                          <div class="am-text-left modalprice"><span id="payprice" class="am-text-lg" ng-bind="payprice"></span>元</div>
+                          <div id="checkpay">
+                              <label>
+                                <span class="am-fl am-text-left"><img src="images/wx.jpg" width="20" class="payimg">微信支付</span>
+                                <span class="pay_list_c1 am-fr" ng-click='paytoggle(0)' ng-class="{true:'on',false:''}[isActive]">
+                                    <input type="radio" ng-checked="wxRadio" name="payway" value="1" class="radioclass" id="payway-wx">
+                                </span>
+
+                              </label>
+                              <label>
+                                <span class="am-fl am-text-left"><img src="images/zfb.jpg" width="20" class="payimg">支付宝支付</span>
+                                <span class="pay_list_c1 am-fr" ng-click='paytoggle(1)' ng-class="{true:'',false:'on'}[isActive]">
+                                      <input type="radio" ng-checked="zfbRadio" name="payway" value="1" class="radioclass" id="payway-zfb">
+                                </span>
+                              </label>
+                          </div>
+                          <a href="javascript:;" id="hasAcc" ng-click="hasAcc()" class="am-text-left">我已拥有帐号</a>
+                      </div>
+                      <div class="am-modal-footer payfooter">
+                        <span class="am-modal-btn okbtn" id="paybtn" data-am-modal-confirm ng-bind="payWayBtn"></span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- 登录框 -->
+                  <div class="am-modal am-modal-confirm listmodal" tabindex="-1" id="my-login">
+                    <div class="am-modal-dialog">
+                      <div class="am-modal-hd">登录</div>
+                      <div class="am-modal-bd">
+                              请输入您的手机号或客户号
+                          <input type="text" class="am-modal-prompt-input" id="logintext" ng-model="username">
+                      </div>
+                      <div class="am-modal-footer payfooter">
+                        <span class="am-modal-btn okbtn" data-am-modal-confirm>登录</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 错误提示 -->
+                  <div class="am-modal am-modal-confirm listmodal" tabindex="-1" id="errormsg">
+                      <div class="am-modal-dialog">
+                        <div class="am-modal-hd">error</div>
+                        <div class="am-modal-bd" ng-bind="errmsg"></div>
+                        <div class="am-modal-footer payfooter">
+                          <span class="am-modal-btn okbtn">确定</span>
+                        </div>
+                      </div>
+                  </div>
+
+                  <!-- 支付成功 -->
+                  <div class="am-modal am-modal-confirm listmodal" tabindex="-1" id="paySuccess">
+                      <div class="am-modal-dialog">
+                        <div class="am-modal-hd">
+                          <img src="images/payok.png" width="20">支付成功
+                          <div>您的客户号是:<span id="userName" class="am-text-lg" ng-bind="newUserName"></span></div>
+                          </div>
+                        <div class="am-modal-bd">
+                          您可以输入手机号以方便下次登录使用
+                          <input type="phone" class="am-modal-prompt-input" id="userMobile" ng-model="userMobile">
+                        </div>
+                        <div class="am-modal-footer payfooter">
+                          <span class="am-modal-btn payclose" data-am-modal-cancel>关闭</span>
+                          <span class="am-modal-btn paysubmit" data-am-modal-confirm>提交</span>
+                        </div>
+                      </div>
+                  </div>
+
+                  <!-- loading -->
+                  <div class="am-modal am-modal-loading am-modal-no-btn" tabindex="-1" id="loading">
+                    <div class="am-modal-dialog">
+                      <div class="am-modal-hd">正在加载...</div>
+                      <div class="am-modal-bd">
+                        <span class="am-icon-spinner am-icon-spin"></span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- popup -->
+                  <div class="am-modal am-modal-no-btn" tabindex="-1" id="doc-modal-1">
+                    <div class="am-modal-dialog">
+                      <div class="am-modal-hd">Modal 标题
+                        <a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
+                      </div>
+                      <div class="am-modal-bd">
+                        <button id="hidepopup">点我不再显示</button>
+                      </div>
+                    </div>
+                  </div>
+              </div>

@@ -2,7 +2,7 @@
 	"header": {
 		"title": "巽震数码",
 		"logourl": "images/logo.png",
-		"logohref": "http://www.yoursclass.com",
+		"logohref": "info.html",
 		"ico": "http://localhost/test/list/images/logo.ico",
 		"menus": [{
 			"title": "首页",
@@ -16,6 +16,10 @@
 		},{
 			"title":"图库",
 			"href":"photolist.html"
+		},
+		{
+			"title":"登录",
+			"href":"../newmooncake/"
 		}]
 	},
 	"footer":{
@@ -30,20 +34,7 @@
 		"hot_keywords": ["music", "videos", "南海问题"]
 	},
 	"slides":[
-		{
-			"imgurl":"images/guide01.jpg",
-			"href":"http://www.baidu.com",
-			"desc":"动态插入的 slide1"
-		},
-		{
-			"imgurl":"images/guide01.jpg",
-			"href":"http://www.baidu.com",
-			"desc":"动态插入的 slide2"
-		},{
-			"imgurl":"images/guide01.jpg",
-			"href":"http://www.baidu.com",
-			"desc":"动态插入的 slide3"
-		}
+		
 	],
 	"classifys": [{
 			"uid": 10,
@@ -61,7 +52,7 @@
 				"favritescnt": 6,
 				"msgscnt": 8,
 				"payment": {
-					"pay": 0.1
+					"pay": 0
 				},
 				"tags": ["立体", "旅游", "导览", "教学"]
 			}]
@@ -87,6 +78,7 @@
 				},
 				"tags": ["立体", "建筑", "导览"]
 			}, {
+				"ResID": "010",
 				"title": "博物馆",
 				"imgurl": "images/guide02.jpg",
 				"href": "../viewer/player.html?xml=../video/demotour-kuchlerhaus/tour.xml",
@@ -115,10 +107,11 @@
 				"favritescnt": 6,
 				"msgscnt": 8,
 				"payment": {
-					"pay": 0.1
+					"pay": 0
 				},
 				"tags": ["全景", "过山车"]
 			}, {
+				"ResID": "1621",
 				"title": "阿尔卑斯滑雪",
 				"imgurl": "images/sport03.jpg",
 				"href": "../viewer/player.html?xml=../video/videopano6/videopano.xml",
@@ -131,6 +124,7 @@
 				},
 				"tags": ["滑雪", "阿尔卑斯山"]
 			}, {
+				"ResID": "4962",
 				"title": "翼装飞翔360度全景视角",
 				"imgurl": "images/sport04.jpg",
 				"href": "../viewer/player.html?xml=../video/videopano3/videopano.xml",
@@ -143,6 +137,7 @@
 				},
 				"tags": ["滑翔", "全景"]
 			}, {
+				"ResID": "8462",
 				"title": "战斗机空战",
 				"imgurl": "images/sport05.jpg",
 				"href": "../viewer/player.html?xml=../video/videopano5/videopano.xml",
@@ -175,6 +170,7 @@
 					},
 					"tags": ["航拍", "迪拜"]
 				}, {
+					"ResID": "4861",
 					"title": "沙漠",
 					"imgurl": "images/tour01.jpg",
 					"href": "../viewer/player.html?xml=../video/videopano1/videopano.xml",
@@ -189,6 +185,7 @@
 				},
 
 				{
+					"ResID": "6666",
 					"title": "神秘而梦幻的中国云南之旅",
 					"imgurl": "images/tour02.jpg",
 					"href": "../viewer/player.html?xml=../video/videopano4/videopano.xml",
@@ -197,10 +194,11 @@
 					"favritescnt": 6,
 					"msgscnt": 8,
 					"payment": {
-						"pay": 0.1
+						"pay": 0
 					},
 					"tags": ["风光", "云南"]
 				}, {
+					"ResID": "9451",
 					"title": "SNH48不想太伟大 bixude",
 					"imgurl": "images/tour03.jpg",
 					"href": "../viewer/player.html?xml=../video/videopano2/videopano.xml",
@@ -242,7 +240,7 @@
 		{
 			"uid": 6,
 			"sortid": 6,
-			"type": "video",
+			"type": "video-2d",
 			"title": "2D视频",
 			"more_href": "listdetail_video.html",
 			"list": [
@@ -251,14 +249,14 @@
 					"ResID": "007",
 					"title": "我的2D视频",
 					"imgurl": "images/guide02.jpg",
-					"href": "video.html",
-					"source" : "../video/videopano1/video-1920x960.mp4",
+					"href": "video.html?uid=6&resid=007",
+					"source" : "../video/video-1920x960.mp4",
 					"desc": "2D平面视频",
 					"clickscnt": 7,
 					"favritescnt": 6,
 					"msgscnt": 8,
 					"payment": {
-						"pay": 0.1
+						"pay": 0
 					},
 					"tags": ["课程", "培训"]
 				}
@@ -459,7 +457,7 @@
 				"desc": "二维码扫描是专业的我查查扫一扫、条码，二维码生成、记录管理工具。",
 				"features": [{
 					"imghref": "images/sport01.jpg",
-					"content": ["快速开启我查查。"]
+					"content": "快速开启我查查。"
 				}, {
 					"imghref": "images/sport02.jpg",
 					"content": ["购物时我查查"]

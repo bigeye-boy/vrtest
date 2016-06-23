@@ -8,14 +8,10 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1">
   <title>图库</title>
-
   <!-- Set render engine for 360 browser -->
   <meta name="renderer" content="webkit">
-
   <!-- No Baidu Siteapp-->
   <meta http-equiv="Cache-Control" content="no-siteapp"/>
-
-
   <!-- Add to homescreen for Chrome on Android -->
   <meta name="mobile-web-app-capable" content="yes">
 
@@ -23,7 +19,6 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
-
   <!-- Tile icon for Win8 (144x144 + tile color) -->
   <meta name="msapplication-TileColor" content="#0e90d2">
   <link rel="stylesheet" href="css/amazeui.min.css">
@@ -31,7 +26,7 @@
   <link rel="stylesheet" type="text/css" href="css/swipebox.min.css">
   <script src="js/angular.1.4.6.min.js"></script>
 </head>
-<body ng-app="listApp" ng-controller="listCtrl" ng-cloak>
+<body ng-app="listApp" ng-controller="galleryCtrl" ng-cloak>
 <!--在这里编写你的代码-->
 <div class="listMain">
 <header class="am-topbar am-header-default" data-am-widget="header" style="position: relative;" ng-include="'header.html'"></header>
@@ -72,39 +67,11 @@
 <footer ng-include = "'footer.html'"></footer>
 </div>
 <script src="js/jquery.min.js"></script>
-<script src="js/amazeui.min.js"></script>  
-<script src="js/app.js"></script>
+<script src="js/amazeui.min.js"></script>
+<script src="js/common.js"></script>  
+<script src="js/apiAngular.js"></script>
 <script src="js/jquery.swipebox.min.js"></script>
-<script>
- var listapp = angular.module('listApp', []);
-    listapp.controller('listCtrl', function($scope,$http) {
-        $http.get("json/app.json")
-        .success(function(response){
-            $scope.header = response.header;
-            $scope.footer = response.footer;
-            $scope.lists = response;
-            $scope.class = function(e){
-              return e.uid == GetQueryString("uid");
-            }
-            $scope.resid = function(e){
-              return e.ResID == GetQueryString("resid");
-            }
-
-          })
-});
-</script>
-<script type="text/javascript">
-$(document).ready(function(){
-
-  $( '.swipebox' ).swipebox({
-    useCSS : true, // false will force the use of jQuery for animations
-    useSVG : true, // false to force the use of png for buttons
-    hideBarsOnMobile : false, // false will show the caption and navbar on mobile devices
-    removeBarsOnMobile :false,
-    loopAtEnd:false
-  });
-})
-</script>
+<script src="js/photoAngular.js"></script>
 </body>
 </html>
 

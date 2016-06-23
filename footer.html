@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
-  <script src="js/app.js"></script>
+  <script src="js/apiAngular.js"></script>
 </head>
 <body ng-controller="listCtrl" ng-cloak ng-jq>
     <footer data-am-widget="footer"class="am-footer am-footer-default" data-am-footer="{}" ng-show="{{footer.show}}">
     <div class="am-footer-miscs">
-      <a ng-href="{{freeurl}}" id="freeurl" class="am-hide-lg-only">
+      <a id="freeurl" class="am-hide-lg-only" ng-click="onclick_auth()">
         <div class="am-header am-header-default bgblue">
         <h1 class="am-header-title" style="margin: 0 25%;">
            <img class="am-img-responsive" style="display: inline;" ng-src="{{footer.linkimg}}">

@@ -7,62 +7,76 @@
   <meta name="keywords" content="">
   <meta name="viewport"
         content="width=device-width, initial-scale=1">
-  <title>列表</title>
-
+  <title>404</title>
   <!-- Set render engine for 360 browser -->
   <meta name="renderer" content="webkit">
-
   <!-- No Baidu Siteapp-->
   <meta http-equiv="Cache-Control" content="no-siteapp"/>
-
-
   <!-- Add to homescreen for Chrome on Android -->
   <meta name="mobile-web-app-capable" content="yes">
-
   <!-- Add to homescreen for Safari on iOS -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
-
   <!-- Tile icon for Win8 (144x144 + tile color) -->
   <meta name="msapplication-TileColor" content="#0e90d2">
-
   <link rel="stylesheet" href="css/amazeui.min.css">
   <link rel="stylesheet" href="css/app.css">
-  <link rel="shortcut icon" ng-href="{{header.ico}}" type="image/x-icon">
-  <script src="js/angular.1.4.6.min.js"></script> 
-  <script src="js/pingpp.js"></script>
+  <link rel="shortcut icon" href="{{header.ico}}" type="image/x-icon">
+<script src="js/angular.1.4.6.min.js"></script>
 </head>
 <body>
-<!--在这里编写你的代码-->
 <div class="listMain">
-<header class="am-topbar am-header-default" data-am-widget="header" style="position: relative;" ng-include="'header.html'"></header>
-    <!-- 页头结束 -->
+<header class="am-topbar am-header-default" data-am-widget="header" style="position: relative;margin-bottom: 0px;border-width: 0px;"  ng-include="'header.html'"></header>
 
-    <div class="agencyBody">    
-        
-      <div class="am-g am-g-fixed am-margin-top payfooter">
-            <a href="javascript:history.go(-2)" class="am-btn paysubmit" id="paySuccBack">支付完成 点此返回</a>
-        </div>   
+<div class="am-cf admin-main">
+  <!-- content start -->
+  <div class="admin-content">
+
+    <div class="am-cf am-padding">
+      <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">404</strong> / <small>That’s an error</small></div>
     </div>
 
-<footer ng-include = "'footer.html'"></footer>
+    <div class="am-g">
+      <div class="am-u-sm-12">
+        <h2 class="am-text-center am-text-xxxl am-margin-top-lg">404. Not Found</h2>
+        <p class="am-text-center">没有找到你要的页面</p>
+        <pre class="page-404 am-text-center">
+          .----.
+       _.'__    `.
+   .--($)($$)---/#\
+ .' @          /###\
+ :         ,   #####
+  `-..__.-' _.-\###/
+        `;_:    `"'
+      .'"""""`.
+     /,  ya ,\\
+    //  404!  \\
+    `-._______.-'
+    ___`. | .'___
+   (______|______)
+        </pre>
+      </div>
+    </div>
+  </div>
+  <!-- content end -->
 
 </div>
+
+    <footer ng-include = "'footer.html'"></footer>
+</div>    
 <script src="js/jquery.min.js"></script>
 <script src="js/amazeui.min.js"></script>
 <script src="js/common.js"></script>
-<script type="text/javascript" src="js/apiAngular.js"></script>
 <script>
- var listapp = angular.module('listApp', []);
+  var listapp = angular.module('listApp', []);
     listapp.controller('listCtrl', function($scope,$http) {
         $http.get("json/app.json")
         .success(function(response){
             $scope.header = response.header;
+            $scope.footer = response.footer;
           })
 });
 </script>
 </body>
 </html>
-
-

@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" ng-app="listApp" ng-controller="listCtrl" ng-cloak>
+<html class="no-js" ng-app="listApp" ng-controller="searchCtrl" ng-cloak>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,18 +56,22 @@
             </div>
         </div>  
         <div class="am-g am-g-fixed am-margin-top">
-              <div data-am-widget="list_news" class="am-list-news am-list-news-default">
+              <div data-am-widget="list_news" class="am-list-news am-list-news-default" ng-repeat="classifys in response.classifys | filter:type" style="margin: 0px;">
                     <div class="am-list-news-bd">
-                        <ul class="am-list am-g">
+                        <ul class="am-list am-g" style="margin-bottom: 0px;">
                            <!--缩略图在标题左边-->
-                            <li class="am-u-sm-12 am-u-md-12 am-u-lg-4 am-u-end am-list-item-desced am-list-item-thumbed am-list-item-thumb-left am-cf" ng-repeat = "list in searchlist | filter:type">
-                                <div class="am-u-sm-4 am-u-md-4 am-u-lg-12 am-list-thumb">
-                                  <a href="{{list.href}}?uid={{list.uid}}&resid={{list.ResID}}">
+                            <li class="am-u-sm-12 am-u-md-12 am-u-lg-4 am-u-end am-list-item-desced am-list-item-thumbed am-list-item-thumb-left am-cf" ng-repeat = "list in classifys.list | filter:searchList" >
+                                <div class="am-u-sm-4 am-u-md-4 am-u-lg-12 am-list-thumb" ng-click="jump(list,classifys)">
+                                  <!-- <a href="{{list.href}}?uid={{list.uid}}&resid={{list.ResID}}"> -->
+                                  <a href="javascript:;">
                                     <img ng-src="{{list.imgurl}}" class="am-img-responsive" alt="{{list.title}}"/>
                                   </a>
                                 </div>
-                                <div class="am-u-sm-8 am-u-md-8 am-u-lg-12 am-list-main list-main">
-                                    <h3 class="am-list-item-hd"><a href="{{list.href}}?uid={{classifys.uid}}&resid={{list.ResID}}">{{list.title}}</a></h3>
+                                <div class="am-u-sm-8 am-u-md-8 am-u-lg-12 am-list-main list-main" ng-click="jump()">
+                                    <h3 class="am-list-item-hd">
+                                        <!-- <a href="{{list.href}}?uid={{classifys.uid}}&resid={{list.ResID}}">{{list.title}}</a> -->
+                                        <a href="javascript:;">{{list.title}}</a>
+                                    </h3>
                                     <div class="am-list-item-text">{{list.desc}}</div>
                                 </div><!-- <br/><br/><br/> -->
                                 <div style="clear: both;"></div>
@@ -75,99 +79,16 @@
                                       <div class="am-fl list-sour"><span ng-repeat = "tags in list.tags|limitTo:3">{{tags}}</span></div>
                                       <div class="am-fr am-hide-lg-only">
                                         <span class="am-icon-comment-o">{{list.msgscnt}}</span> <!-- 回复 -->
-                                        <span class="am-icon-star-o">{{list.favritescnt}}</span> <!-- 收藏 -->
-                                        <span class="am-icon-thumbs-o-up">{{list.clickscnt}}</span> <!-- 点赞 -->
+                                        <span class="am-icon-star-o" onclick="funsc(this,event)">{{list.favritescnt}}</span> <!-- 收藏 -->
+                                        <span class="am-icon-thumbs-o-up" onclick="funzan(this,event)">{{list.clickscnt}}</span> <!-- 点赞 -->
                                       </div>
                                  </div>
                             </li>
-                        </ul>
-                       <div><!-- 模态框 -->
-
-                              <!-- 付款确认 -->
-                              <div class="am-modal am-modal-confirm listmodal" tabindex="-1" id="my-confirm"> 
-                                <div class="am-modal-dialog">
-                                  <div class="am-modal-hd">付款确认</div>
-                                  <div class="am-modal-bd">
-                                      <div class="am-text-left modalprice"><span id="payprice" class="am-text-lg">20.1</span>元</div>
-                                      <div id="checkpay">
-                                          <label>
-                                            <span class="am-fl am-text-left"><img src="images/wx.jpg" width="20" class="payimg">微信支付</span>
-                                            <span class="pay_list_c1 on am-fr" onclick='paytoggle(this)'>
-                                                <input type="radio" checked="checked" name="payway" value="1" class="radioclass" id="payway-wx">
-                                            </span>
-                                          </label>
-                                          <label>
-                                            <span class="am-fl am-text-left"><img src="images/zfb.jpg" width="20" class="payimg">支付宝支付</span>
-                                            <span class="pay_list_c1 am-fr" onclick='paytoggle(this)'>
-                                                <input type="radio"  name="payway" value="1" class="radioclass" id="payway-zfb">
-                                            </span>
-                                          </label>
-                                      </div>
-                                      <a href="javascript:;" id="hasAcc" class="am-text-left" >我已拥有帐号</a>
-                                  </div>
-                                  <div class="am-modal-footer payfooter">
-                                    <span class="am-modal-btn okbtn" id="paybtn" data-am-modal-confirm>确认微信支付</span>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <!-- 登录框 -->
-                              <div class="am-modal am-modal-confirm listmodal" tabindex="-1" id="my-login">
-                                <div class="am-modal-dialog">
-                                  <div class="am-modal-hd">登录</div>
-                                  <div class="am-modal-bd">
-                                          请输入您的手机号或客户号
-                                      <input type="text" class="am-modal-prompt-input" id="logintext">
-                                  </div>
-                                  <div class="am-modal-footer payfooter">
-                                    <span class="am-modal-btn okbtn" data-am-modal-confirm>登录</span>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <!-- 错误提示 -->
-                              <div class="am-modal am-modal-confirm listmodal" tabindex="-1" id="errormsg">
-                                  <div class="am-modal-dialog">
-                                    <div class="am-modal-hd">error</div>
-                                    <div class="am-modal-bd"></div>
-                                    <div class="am-modal-footer payfooter">
-                                      <span class="am-modal-btn okbtn">确定</span>
-                                    </div>
-                                  </div>
-                              </div>
-
-                              <!-- 支付成功 -->
-                              <div class="am-modal am-modal-confirm listmodal" tabindex="-1" id="paySuccess">
-                                  <div class="am-modal-dialog">
-                                    <div class="am-modal-hd">
-                                      <img src="images/payok.png" width="20">支付成功
-                                      <div>您的客户号是:<span id="userName" class="am-text-lg"></span></div>
-                                      </div>
-                                    <div class="am-modal-bd">
-                                      您可以输入手机号以方便下次登录使用
-                                      <input type="phone" class="am-modal-prompt-input" id="userMobile">
-                                    </div>
-                                    <div class="am-modal-footer payfooter">
-                                      <span class="am-modal-btn payclose" data-am-modal-cancel>关闭</span>
-                                      <span class="am-modal-btn paysubmit" data-am-modal-confirm>提交</span>
-                                    </div>
-                                  </div>
-                              </div>
-
-                              <!-- loading -->
-                              <div class="am-modal am-modal-loading am-modal-no-btn" tabindex="-1" id="loading">
-                                <div class="am-modal-dialog">
-                                  <div class="am-modal-hd">正在加载...</div>
-                                  <div class="am-modal-bd">
-                                    <span class="am-icon-spinner am-icon-spin"></span>
-                                  </div>
-                                </div>
-                              </div>
-                        </div>
-                        
-                        <div class="searchErr am-text-center am-text-lg am-text-warning"></div>
+                        </ul> 
                     </div>
               </div>
+              <div class="searchErr am-text-center am-text-lg am-text-warning" ng-hide='true'>未搜到结果</div>
+
               <div data-am-widget="gotop" class="am-gotop am-gotop-fixed" >
                 <a href="#top" title="回到顶部">
                     <span class="am-gotop-title">回到顶部</span>
@@ -182,21 +103,9 @@
 </div>
 <script src="js/jquery.min.js"></script>
 <script src="js/amazeui.min.js"></script>
-<script type="text/javascript" src="js/app.js"></script>
-<script>
- var listapp = angular.module('listApp', []);
-    listapp.controller('listCtrl', function($scope,$http) {
-        $http.get("json/app.json")
-        .success(function(response){
-            var searArr = response.classifys;
-            var arrayObj = showSearch(searArr);
-            $scope.header = response.header;
-            $scope.footer = response.footer;
-            $scope.searchlist = arrayObj;
-            $scope.pay = function(){pay()};
-            $scope.type = function(e){return (e.type !== 'app' || e.type !== 'photo');}
-          })
-});
-</script>
+<script src="js/common.js"></script>
+<script type="text/javascript" src="js/apiAngular.js"></script>
+<script src="js/pay.js"></script>
+<script src="js/searchAngular.js"></script>
 </body>
 </html>
