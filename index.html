@@ -32,6 +32,47 @@
   <link rel="shortcut icon" href="{{header.ico}}" type="image/x-icon">
   <script src="js/angular.1.4.6.min.js"></script>
   <script src="js/pingpp.js"></script>
+   <script>
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+    window.shareData = {
+        "timeLineLink": "http://www.baidu.com",    
+        "sendFriendLink": "http://www.baidu.com",
+        "weiboLink": "http://www.baidu.com",
+        "tTitle": "教师列表",
+        "tContent": "教师列表简介",
+        "fTitle": "教师列表",
+        "fContent": "教师列表简介",
+        "wContent": "教师列表简介"
+        };
+        // 发送给好友
+        WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+            WeixinJSBridge.invoke('sendAppMessage', {
+                "img_url": "http://su.bdimg.com/static/superplus/img/logo_white.png",
+                "img_width": "401",
+                "img_height": "275",
+                "link": window.shareData.sendFriendLink,
+                "desc": window.shareData.fContent,
+                "title": window.shareData.fTitle
+            }, function (res) {
+                _report('send_msg', res.err_msg);
+            })
+        });
+        // 分享到朋友圈
+        WeixinJSBridge.on('menu:share:timeline', function (argv) {
+            WeixinJSBridge.invoke('shareTimeline', {
+                "img_url": "http://su.bdimg.com/static/superplus/img/logo_white.png",
+                "img_width": "401",
+                "img_height": "275",
+                "link": window.shareData.timeLineLink,
+                "desc": window.shareData.tContent,
+                "title": window.shareData.tTitle
+            }, function (res) {
+                _report('timeline', res.err_msg);
+            });
+        });
+ 
+    }, false)
+</script>
 </head>
 <body>
 <!--在这里编写你的代码-->
